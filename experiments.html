@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'/>
+        <title>Experiments</title>
+        <style>
+            section {
+                border: 1px solid black;
+                padding: 1rem;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Page title -->
+        <h1>Experiments</h1>
+        <main>
+            <hr>
+            <section>
+                <h2>Aside section</h2>
+                <div>
+                    <h3>Main paragraph</h3>
+                    <p>
+                        <b>This is b </b>
+                        <i>this line is i</i>
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                        aliquip ex <em>ea commodo consequat</em>.
+                    </p>
+                    <aside>
+                        <h4>aside note:</h4>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                            aliquip ex ea commodo consequat.
+                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </p>
+                    </aside>
+                </div>
+            </section>
+            <hr>
+            <section>
+                <h2>Coding section</h2>
+                <code>
+                    console.log("hello world");
+                </code>
+            </section>
+            <hr>
+            <section>
+                <h2>Pre section</h2>
+                <pre>
+                    Eu non diam phasellus vestibulum lorem sed risus 
+                    ultricies tristique.         Enim lobortis scelerisque 
+                    fermentum dui. Sed risus pretium quam vulputate. 
+
+
+                    Lorem donec massa sapien faucibus et molestie ac 
+                    
+
+
+                </pre>
+            </section>
+            <hr>
+            <section>
+                <h2>iframe - links to <i><u>example.com</u></i></h2>
+                <iframe src="https://example.com" width="100%"></iframe>
+            </section>
+            <hr>
+
+            <section>
+                <h2>Audio and Video</h2>
+                <div>
+                    <h3>Let's hear some piano</h3>
+                    <audio controls>
+                        <source src="./files/MySound.mp3" type="audio/mp3">
+                        Your browser does not support the audio tag.
+                    </audio>
+                </div>
+                
+                <div>
+                    <h3>Video: sunset cliff</h3>
+                    <video width="320px" height="180px" controls>
+                        <source src="./files/IMG_3547.mp4" type="video/mp4">
+                        your brower does not support the video tag.
+                    </video>
+                </div>
+
+            </section>
+            <hr>
+            <section>
+                <h2>Canvas and Svg:</h2>
+                <h3>Canvas</h3>
+                <canvas id="canvas" width="300" height="150">
+                    <strong>Your browser does not support the canvas tag.</strong>
+                </canvas>
+                <script>
+                    window.onload = () => {
+                        const canvas = document.querySelector('#canvas');
+                        var ctx = canvas.getContext("2d");
+                        ctx.beginPath();
+                        ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+                        ctx.stroke();
+                    }
+                </script>
+
+                <h3>SVG:</h3>
+                <svg width="100" height="100">
+                    <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+                </svg>
+            </section>
+            <hr>
+            <section>
+                <h2>Form and all related tags</h2>
+                <form action="/" method="post">
+                    <h3>Example</h3>
+                    <fieldset>
+                        <legend>Basic Information</legend>
+                        <label for="name">Name (required)</label>
+                        <input type="text" name="name" id="name" required aria-placeholder="Your name here">
+
+                        <br>
+                        <label for="dob">Date of Birth</label>
+                        <input type="date" name="dob" id="dob" required>
+
+                        <br>
+                        <label for="textarea">Notes:</label><br>
+                        <textarea name="textarea" rows="4" cols="90%"></textarea>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Lucky numbers</legend>
+                        <label for="numbers">Select lucky number :</label>
+                        <select name="numbers" id="numbers">
+                            <optgroup label="Less Than 50">
+                                <option value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="30">30</option>
+                            </optgroup>
+                            <optgroup label="Larger Than 50">
+                                <option value="60">60</option>
+                                <option value="70">70</option>
+                                <option value="80">80</option>
+                            </optgroup>
+                        </select>
+                        <br>
+                        <label for="number">Pick a number or enter your number:</label>
+                        <input list="nums" name="number" id="number">
+                        <datalist id="nums">
+                            <option value="1"></option>
+                            <option value="2"></option>
+                            <option value="3"></option>
+                            <option value="4"></option>
+                        </datalist>
+                    </fieldset>
+                    <button type="submit">Submit</button>
+                
+                </form>
+            </section>
+
+            <hr>
+            <section>
+                <h2>Details & summary</h2>
+                <details>
+                    <summary>Lorem</summary>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                        aliquip ex ea commodo consequat.
+                    </p>
+                </details>
+                
+            </section>
+            <hr>
+            <section>
+                <h2>Template</h2>
+                <template>
+                    <h3>This is a template:</h3>
+                    <p>
+                        This template will not be shown
+                    </p>
+                </template>
+            </section>
+            <hr>
+            <section>
+                <h2>Table</h2>
+                <table>
+                    <colgroup>
+                        <col span="3" width="200px">
+                    </colgroup>
+                    <caption><strong>Random Data</strong></caption>
+                    <thead>
+                        <tr>
+                            <th>
+                                First Name
+                            </th>
+                            <th>
+                                Last Name
+                            </th>
+                            <th>
+                                Scores
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Them</td>
+                            <td>Dang</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>Johnson</td>
+                            <td>Kim</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>Alfie</td>
+                            <td>Le</td>
+                            <td>100</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <hr>
+            <section>
+                <h2>Figure and Figcaption</h2>
+                <figure>
+                    <img src="./img/cat-meme.png" width="300" alt="a cat">
+                    <figcaption>Cat meme</figcaption>
+                </figure>
+            </section>
+        </main>
+
+        <footer>
+            <h3>Footer</h3>
+            <p>
+                &copy;copy right goes here
+            </p>
+        </footer>
+    </body>
+</html>
