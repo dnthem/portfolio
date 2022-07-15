@@ -1,0 +1,171 @@
+:root {
+    --odd-bgColor: #242a34;
+    --even-bgColor: #181e27;
+    --header-height: 7rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    /* outline: 1px solid black; */
+}
+
+.my-photo {
+    border-radius: 50%;
+}
+
+.small-photo {
+    width: var(--header-height);
+    height: var(--header-height);
+}
+
+.medium-photo {
+    width: 75vh;
+    height: 75vh;
+}
+
+header {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    display: flex;
+    z-index: 100;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.header-photo {
+    height:var(--header-height);
+    background-color: var(--even-bgColor);
+    flex-grow: 5;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-bar {
+    flex-grow: 5;
+    height: var(--header-height);
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.nav-bar a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 1rem;
+}
+.nav-bar a:hover {
+    color: white;
+    background-color: var(--even-bgColor);
+}
+
+section:nth-child(odd) {
+    background-color: var(--odd-bgColor);
+}
+
+section:nth-child(even) {
+    background-color: var(--even-bgColor);
+}
+
+section {
+    width: 100%;
+    min-height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+section h2 {
+    margin-left: 5rem;
+    margin-top: 5rem;
+    font-size: 2.5rem;
+}
+
+.home-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-self-intro-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-self-intro {
+    font-size: 3rem;
+}
+
+/* About me section */
+
+.aboutMe-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.abt-me-card {
+    flex-basis: 100%;
+    margin: 2rem;
+    padding: 2rem;
+    background-color: var(--odd-bgColor);
+    border-radius: .5rem;
+}
+@media (min-width: 40rem) {
+    .abt-me-card{
+        flex-basis: 40%;
+    }
+}
+
+.abt-me-card p {
+    margin: 1rem 0;
+}
+
+.bio {
+    text-align: center;
+    display:flex;
+    flex-direction: column;
+    justify-self: center;
+}
+
+.prog-tools {
+    text-align: center;
+}
+
+.prog-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.prog-container ul li {
+    margin: .5rem 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.next {
+    align-self: center;
+}
+
+.next button {
+    border: none;
+    background-color: rgb(5, 134, 247);
+    padding: 1rem;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}

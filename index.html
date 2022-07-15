@@ -2,17 +2,22 @@
 <html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
     <title>Welcome, I'm Them Dang</title>
     <link rel="stylesheet" href="./css/style.css">
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header>
-        <div>
-            <img src="./img/themdang2.jpeg" alt="my photo">
+        <div class="header-photo">
+            <img class="my-photo small-photo" src="./img/themdang2.jpeg" alt="my photo">
         </div>
-        <nav>
+        <nav class="nav-bar">
             <a href="#home">Home</a>
             <a href="#aboutMe">About Me</a>
             <a href="#projects">Projects</a>
@@ -22,62 +27,64 @@
     </header>
     <main>
         <!-- Home page section -->
-        <section id="home">
+        <section id="home" >
             <h2>Welcome</h2>
-            <div>
+            <div class="home-container">
                 <picture>
                     <source media="(min-width:1500px)" srcset="./img/themdang1.jpeg">
-                    <img src="./img/themdang2.jpeg" alt="My Photo">
+                    <img class="my-photo medium-photo" src="./img/themdang2.jpeg" alt="My Photo">
                 </picture>
-
-                <p>
-                    Hello, I'm Them Dang <br>
-                    A Web Developer
-                </p>
+                <div class="home-self-intro-container">
+                    <p class="home-self-intro">
+                        Hello, I'm Them Dang <br>
+                        A Web Developer
+                    </p>
+                </div>
             </div>
-
         </section>
 
         <!-- About Me page section -->
-        <section id="aboutMe">
+        <section class="about-me" id="aboutMe">
             <h2>About Me</h2>
-            <div>
+            <div class="aboutMe-container">
                 <!-- Background -->
-                <div>
-                    <h3><strong>Bio/background</strong></h3>
-                    <p>Hi, my name is Them Dang. I was born in Vietnam and moved to the United States 7 years ago. 
-                        I'm currently an undergraduate studying computer science at UCSD. 
-                        Some activities I enjoy at home in my free time are coding (working on my projects), watching movies, or playing video games.
+                <div class="bio abt-me-card">
+                    <h3><strong>Something about me</strong></h3>
+                    <p>Hi, my name is Them Dang. I was born in Vietnam and moved to the United States 7 years ago.
+                        I'm currently an undergraduate studying computer science at UCSD.
+                        Some activities I enjoy at home in my free time are coding (working on my projects),
+                        watching movies, or playing video games.
                         Outside activities I would like to do are hiking and going to beach.
                     </p>
                 </div>
 
                 <!-- Programming Languages -->
-                <div>
+                <div class="prog-tools abt-me-card">
                     <h3><strong>Programming Languages/Tools</strong></h3>
-                    <!-- Left column -->
-                    <div>
-                        <ul>
+                    <div class="prog-container">
+                        <!-- Left column -->
+                        <ul class="prog-left">
                             <li>HTML</li>
                             <li>CSS</li>
                             <li>JavaScript</li>
                             <li>Bootstrap</li>
                         </ul>
-                    </div>
-                    <!-- Right column -->
-                    <div>
-                        <ul>
+
+                        <!-- Right column -->
+
+                        <ul class="prog-right">
                             <li>C++</li>
                             <li>Python</li>
                             <li>Node.js</li>
                             <li>Firebase</li>
                             <li>GitHub</li>
                         </ul>
+
                     </div>
                 </div>
-                
+
             </div>
-            <div>
+            <div class="next">
                 <button>Check out my Projects</button>
             </div>
         </section>
@@ -96,7 +103,7 @@
                     <div>
                         <h3>Cooking Recipes</h3>
                         <p>
-                            Simplifying recipe management in minimalist design    
+                            Simplifying recipe management in minimalist design
                         </p>
                         <a href="https://compassionate-bardeen-fe4d03.netlify.app/">Checkout app</a>
                     </div>
@@ -111,7 +118,7 @@
                     <div>
                         <h3>Pomodoro Timer</h3>
                         <p>
-                            Inherited and worked on an existing project, 
+                            Inherited and worked on an existing project,
                             improved existing and added new features
                         </p>
                         <a href="https://productoro-b340e.web.app/">Checkout app</a>
