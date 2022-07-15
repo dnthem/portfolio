@@ -17,6 +17,10 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    font-size: 16px;
+}
+
 .my-photo {
     border-radius: 50%;
 }
@@ -31,12 +35,7 @@ html {
     height: 80vw;
 }
 
-@media (min-width: 40rem) {
-    .medium-photo {
-        width: 70vh;
-        height: 70vh;
-    }
-}
+
 
 header {
     position: -webkit-sticky;
@@ -117,6 +116,7 @@ section h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .home-self-intro {
@@ -139,12 +139,6 @@ section h2 {
     padding: 2rem;
     background-color: var(--odd-bgColor);
     border-radius: .5rem;
-}
-
-@media (min-width: 40rem) {
-    .abt-me-card {
-        flex-basis: 40%;
-    }
 }
 
 .abt-me-card p {
@@ -240,12 +234,6 @@ ul {
     align-items: center;
 }
 
-@media (min-width: 40rem) {
-    .pj-container{
-        flex-direction: row;
-    }
-}
-
 .pj-details >*:not(h3) {
     display: none;
 }
@@ -282,7 +270,6 @@ ul {
 .icon-wrapper {
     display:inline-block;
     padding: .5rem;
-    width: 3rem;
     border-radius: 50%;
     background-color: white;
     margin-left: .5rem;
@@ -295,7 +282,7 @@ ul {
 .contact-container {
     min-height: 70vh;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 
     justify-content: space-around;
     align-items: center;
@@ -322,7 +309,7 @@ ul {
 }
 
 .contact-email {
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .contact-email a {
@@ -331,4 +318,23 @@ ul {
 
 .contact-email a:hover {
     color:#0386f9;
+}
+
+@media (min-width: 40rem) {
+    .abt-me-card {
+        flex-basis: 40%;
+    }
+
+    .pj-container{
+        flex-direction: row;
+    }
+
+    .medium-photo {
+        width: 70vh;
+        height: 70vh;
+    }
+
+    .contact-container {
+        flex-direction: row;
+    }
 }
