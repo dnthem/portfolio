@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="home">
 
 <head>
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
@@ -27,7 +27,7 @@
     </header>
     <main>
         <!-- Home page section -->
-        <section id="home" >
+        <section>
             <h2>Welcome</h2>
             <div class="home-container">
                 <picture>
@@ -93,54 +93,59 @@
         <section id="projects">
             <h2>Projects</h2>
             <!-- Project details -->
-            <div>
+            <div class="pj-container">
                 <!-- Project 1 -->
                 <article>
-                    <div>
+                    <div class="pj-date">
                         Fall 2021
                     </div>
-                    <img src="./img/food-recipes.png" alt="Food recipes app">
-                    <div>
-                        <h3>Cooking Recipes</h3>
-                        <p>
-                            Simplifying recipe management in minimalist design
-                        </p>
-                        <a href="https://compassionate-bardeen-fe4d03.netlify.app/">Checkout app</a>
+                    <div class="pj-content pj1">
+                        <div class="pj-details">
+                            <h3>Cooking Recipes</h3>
+                            <p>
+                                Simplifying recipe management in minimalist design
+                            </p>
+                            <a href="https://compassionate-bardeen-fe4d03.netlify.app/" target=”_blank”>Check out
+                                app</a>
+                        </div>
                     </div>
                 </article>
 
                 <!-- Project 2 -->
                 <article>
-                    <div>
+                    <div class="pj-date">
                         Spring 2022
                     </div>
-                    <img src="./img/pomo.png" alt="Pomodoro Timer">
-                    <div>
-                        <h3>Pomodoro Timer</h3>
-                        <p>
-                            Inherited and worked on an existing project,
-                            improved existing and added new features
-                        </p>
-                        <a href="https://productoro-b340e.web.app/">Checkout app</a>
+                    <div class="pj-content pj2">
+                        <div class="pj-details">
+                            <h3>Pomodoro Timer</h3>
+                            <p>
+                                Inherited and worked on an existing project,
+                                improved existing and added new features
+                            </p>
+                            <a href="https://productoro-b340e.web.app/" target=”_blank”>Check out app</a>
+                        </div>
                     </div>
                 </article>
 
                 <article>
-                    <div>
+                    <div class="pj-date">
                         Currently
                     </div>
-                    <img src="./img/food-ordering.png" alt="Food Ordering">
-                    <div>
-                        <h3>Food Ordering Web app</h3>
-                        <p>
-                            This app helps customers to access online food online and place their orders
-                        </p>
-                        <a href="https://btttidieu.site/">Checkout this app</a>
+
+                    <div class="pj-content pj3">
+                        <div class="pj-details">
+                            <h3>Food Ordering Web app</h3>
+                            <p>
+                                This app helps customers to access online food online and place their orders
+                            </p>
+                            <a href="https://btttidieu.site/" target=”_blank”>Check out app</a>
+                        </div>
                     </div>
                 </article>
             </div>
 
-            <div>
+            <div class="next">
                 <button>Contact Information</button>
             </div>
         </section>
@@ -148,16 +153,49 @@
         <!-- Contact page section -->
         <section id="contact">
             <h2>Contact</h2>
-            <div>
-                <div>
-                    <p>Email: t4dang@ucsd.edu</p>
+            <div class="contact-container">
+                <div class="contact-email">
+                    <p>Email:<a href="mailto:t4dang@ucsd.edu"> t4dang@ucsd.edu</a></p>
                 </div>
-                <div>
+                <div class="contact-media">
                     <ol>
-                        <li><a><span>GitHub</span> <img src="./img/git_icon.svg" alt="github icon"></a></li>
-                        <li><span>Twitter</span> <img src="./img/twitter_icon.svg" alt="Twitter icon"></li>
-                        <li><span>Linkedln</span> <img src="./img/linkedin.svg" alt="Linkedln icon"></li>
-                        <li><span>Instagram</span> <img src="./img/ig-icon.svg" alt="Instagram icon"></li>
+                        <li>
+                            <a href="https://github.com/dnthem" target="_blank">
+                                <span>GitHub</span>
+                                <div class="icon-wrapper">
+                                    <img class="icon" src="./img/git_icon.svg" alt="github icon">
+                                </div>
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/UcDang" target="_blank">
+                                <span>Twitter</span>
+                                <div class="icon-wrapper">
+                                    <img class="icon" src="./img/twitter_icon.svg" alt="Twitter icon">
+                                </div>
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/themdang/" target="_blank">
+                                <span>Linkedln</span>
+                                <div class="icon-wrapper">
+                                    <img class="icon" src="./img/linkedin.svg" alt="Linkedln icon">
+                                </div>
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/dnthem/" target="_blank">
+                                <span>Instagram</span>
+                                <div class="icon-wrapper">
+                                    <img class="icon" src="./img/ig-icon.svg" alt="Instagram icon">
+                                </div>
+
+                            </a>
+
+                        </li>
                     </ol>
                 </div>
             </div>

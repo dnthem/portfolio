@@ -1,7 +1,9 @@
 :root {
     --odd-bgColor: #242a34;
     --even-bgColor: #181e27;
-    --header-height: 7rem;
+    --header-height: 10vh;
+    --section-height: 90vh;
+    --container-height: 70vh;
 }
 
 * {
@@ -9,6 +11,10 @@
     padding: 0;
     font-family: 'Roboto', sans-serif;
     /* outline: 1px solid black; */
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 .my-photo {
@@ -21,12 +27,20 @@
 }
 
 .medium-photo {
-    width: 75vh;
-    height: 75vh;
+    width: 80vw;
+    height: 80vw;
+}
+
+@media (min-width: 40rem) {
+    .medium-photo {
+        width: 70vh;
+        height: 70vh;
+    }
 }
 
 header {
-    position: -webkit-sticky; /* Safari */
+    position: -webkit-sticky;
+    /* Safari */
     position: sticky;
     top: 0;
     display: flex;
@@ -35,11 +49,11 @@ header {
 
 a {
     text-decoration: none;
-    color: black;
+    color:white;
 }
 
 .header-photo {
-    height:var(--header-height);
+    height: var(--header-height);
     background-color: var(--even-bgColor);
     flex-grow: 5;
     display: flex;
@@ -54,14 +68,16 @@ a {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-   
+
 }
 
 .nav-bar a {
     font-size: 1.5rem;
     font-weight: bold;
     margin: 0 1rem;
+    color: black;
 }
+
 .nav-bar a:hover {
     color: white;
     background-color: var(--even-bgColor);
@@ -77,7 +93,7 @@ section:nth-child(even) {
 
 section {
     width: 100%;
-    min-height: 100vh;
+    min-height: 90vh;
     color: white;
     display: flex;
     flex-direction: column;
@@ -110,9 +126,11 @@ section h2 {
 /* About me section */
 
 .aboutMe-container {
+    min-height: 70vh;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    align-items: center;
 }
 
 .abt-me-card {
@@ -122,8 +140,9 @@ section h2 {
     background-color: var(--odd-bgColor);
     border-radius: .5rem;
 }
+
 @media (min-width: 40rem) {
-    .abt-me-card{
+    .abt-me-card {
         flex-basis: 40%;
     }
 }
@@ -134,7 +153,7 @@ section h2 {
 
 .bio {
     text-align: center;
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-self: center;
 }
@@ -164,8 +183,152 @@ ul {
 
 .next button {
     border: none;
-    background-color: rgb(5, 134, 247);
+    background-color: #0386f9;
+    color:black;
     padding: 1rem;
     margin-bottom: 2rem;
     font-size: 1.5rem;
+    cursor: pointer;
+    transition: .5s ease;
+}
+
+.next button:hover {
+    background-color: #004179;
+    color:white;
+}
+
+/* Projects */
+
+.pj1 {
+    background-size: cover;
+    background-image: url(../img/food-recipes.png);
+}
+
+.pj2 {
+    background-size: cover;
+    background-image: url(../img/pomo.png);
+}
+
+.pj3 {
+    background-size: cover;
+    background-image: url(../img/food-ordering.png);
+}
+
+.pj-container {
+    min-height: 70vh;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.pj-container > article {
+    margin: 2rem 0;
+}
+
+.pj-content {
+    max-width: 10rem;
+    height: 10rem;
+
+    background-size: cover;
+    border-radius: 50%;
+    transition: .5s ease;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+@media (min-width: 40rem) {
+    .pj-container{
+        flex-direction: row;
+    }
+}
+
+.pj-details >*:not(h3) {
+    display: none;
+}
+
+.pj-details {
+    padding: .5rem;
+    transition: 1s ease;
+    background: rgba(0 , 0, 0, 0.5);
+}
+
+.pj-content:hover{
+    max-width: 20rem;
+    height: 20rem;
+    border-radius: .5rem;
+    align-items: flex-end;
+}
+
+.pj-content:hover .pj-details>*:not(h3) {
+    display:block;
+}
+
+.pj-details a {
+    padding: .5rem;
+    background-color: #0386f9;
+}
+
+.pj-details a:hover {
+    background-color:#034176;
+}
+
+
+/* Contact */
+
+.icon-wrapper {
+    display:inline-block;
+    padding: .5rem;
+    width: 3rem;
+    border-radius: 50%;
+    background-color: white;
+    margin-left: .5rem;
+}
+
+.icon {
+    width: 3rem;
+}
+
+.contact-container {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contact-media ol {
+    list-style-type: none;
+}
+
+.contact-media ol li {
+    margin: 1rem 0;
+}
+
+.contact-media ol li a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor:pointer;
+}
+
+.contact-media ol li a:hover {
+    transform: scale(1.05);
+    color:#0386f9;
+}
+
+.contact-email {
+    font-size: 2rem;
+}
+
+.contact-email a {
+    cursor:pointer;
+}
+
+.contact-email a:hover {
+    color:#0386f9;
 }
