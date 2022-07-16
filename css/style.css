@@ -100,8 +100,8 @@ section {
 }
 
 section h2 {
-    margin-left: 5rem;
-    margin-top: 5rem;
+    text-align: center;
+    margin: 2.5rem 0;
     font-size: 2.5rem;
 }
 
@@ -340,6 +340,10 @@ ul {
 }
 
 @media (min-width: 40rem) {
+    section h2 {
+        text-align: unset;
+        margin-left: 5rem;
+    }
     .abt-me-card {
         flex-basis: 40%;
     }
