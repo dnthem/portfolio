@@ -134,11 +134,13 @@ section h2 {
 }
 
 .abt-me-card {
+    min-height: 20vh;
     flex-basis: 100%;
     margin: 2rem;
     padding: 2rem;
     background-color: var(--odd-bgColor);
     border-radius: .5rem;
+    justify-content: center;
 }
 
 .abt-me-card p {
@@ -223,20 +225,17 @@ ul {
 }
 
 .pj-content {
-    max-width: 10rem;
-    height: 10rem;
+    max-width: 20rem;
+    height: 20rem;
+    border-radius: .5rem;
 
     background-size: cover;
-    border-radius: 50%;
     transition: .5s ease;
     overflow: hidden;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
 }
 
-.pj-details >*:not(h3) {
-    display: none;
-}
 
 .pj-details {
     padding: .5rem;
@@ -244,26 +243,46 @@ ul {
     background: rgba(0 , 0, 0, 0.5);
 }
 
-.pj-content:hover{
-    max-width: 20rem;
-    height: 20rem;
-    border-radius: .5rem;
-    align-items: flex-end;
-}
-
-.pj-content:hover .pj-details>*:not(h3) {
-    display:block;
-}
-
 .pj-details a {
+    display: inline-block;
+    
     padding: .5rem;
     background-color: #0386f9;
 }
 
-.pj-details a:hover {
-    background-color:#034176;
-}
+@media (hover: hover) {
+    .pj-content {
+        max-width: 10rem;
+        height: 10rem;
+    
+        background-size: cover;
+        border-radius: 50%;
+        transition: .5s ease;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+    }
 
+    .pj-details >*:not(h3) {
+        display: none;
+    }
+
+    .pj-content:hover{
+        max-width: 20rem;
+        height: 20rem;
+        border-radius: .5rem;
+        align-items: flex-end;
+    }
+
+    .pj-content:hover .pj-details>*:not(h3) {
+        display:block;
+    }
+
+    .pj-details a:hover {
+        background-color:#034176;
+    }
+    
+}
 
 /* Contact */
 
