@@ -31,11 +31,9 @@ body {
 }
 
 .medium-photo {
-    width: min(80vw, 80vh);
+    width: min(70vw, 70vh);
     aspect-ratio: 1 / 1;
 }
-
-
 
 header {
     position: -webkit-sticky;
@@ -350,11 +348,6 @@ ul {
 
     .pj-container{
         flex-direction: row;
-    }
-
-    .medium-photo {
-        width: min(70vw, 70vh);
-        aspect-ratio: 1 / 1;
     }
 
     .contact-container {
