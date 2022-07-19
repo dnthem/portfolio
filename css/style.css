@@ -118,7 +118,7 @@ section h2 {
 }
 
 .home-self-intro {
-    font-size: 3rem;
+    font-size: clamp(1.5rem, 2.5vw, 4rem); 
 }
 
 /* About me section */
