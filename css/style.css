@@ -87,6 +87,11 @@ a {
 }
 
 @media (max-width: 40rem) {
+    .header-photo {
+        padding-left: 1rem;
+        justify-content: flex-start;
+    }
+
     .bar {
         width: 2.5rem;
         height: .2rem;
