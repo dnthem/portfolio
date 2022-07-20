@@ -88,10 +88,10 @@ a {
 
 @media (max-width: 40rem) {
     .bar {
-        width: 4rem;
-        height: .5rem;
+        width: 2.5rem;
+        height: .2rem;
         background-color: white;
-        margin: 5px;
+        margin: .3rem;
         transition-duration: .5s;
     }
 
@@ -125,8 +125,12 @@ a {
         transform: translateX(100%);
     }
 
+    input[type="checkbox"]:checked~.hamburger>.bar {
+        background-color: var(--text-hover);
+    }
+
     input[type="checkbox"]:checked~.hamburger>.bar1 {
-        transform: translateY(1.05rem) rotate(45deg);
+        transform: translateY(.78rem) rotate(45deg); 
     }
 
     input[type="checkbox"]:checked~.hamburger>.bar2 {
@@ -156,8 +160,6 @@ a {
         transition-duration: 0.5s;
     }
 }
-
-
 
 section:nth-child(odd) {
     background-color: var(--odd-bgColor);
