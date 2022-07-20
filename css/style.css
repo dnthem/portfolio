@@ -1,6 +1,8 @@
 :root {
     --odd-bgColor: #242a34;
     --even-bgColor: #181e27;
+    --text-hover: #0386f9;
+
     --header-height: 10vh;
     --section-height: 90vh;
     --container-height: 70vh;
@@ -41,17 +43,18 @@ header {
     position: sticky;
     top: 0;
     display: flex;
-    z-index: 100;
+    background-color: var(--even-bgColor);
+    z-index: 1;
 }
 
 a {
     text-decoration: none;
-    color:white;
+    color: white;
 }
 
 .header-photo {
     height: var(--header-height);
-    background-color: var(--even-bgColor);
+
     flex-grow: 5;
     display: flex;
     justify-content: center;
@@ -60,7 +63,6 @@ a {
 .nav-bar {
     flex-grow: 5;
     height: var(--header-height);
-    background-color: white;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -72,13 +74,90 @@ a {
     font-size: 1.5rem;
     font-weight: bold;
     margin: 0 1rem;
-    color: black;
 }
 
 .nav-bar a:hover {
-    color: white;
+    color: var(--text-hover);
     background-color: var(--even-bgColor);
 }
+
+/* Hamburger menu */
+.hamburger {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .bar {
+        width: 4rem;
+        height: .5rem;
+        background-color: white;
+        margin: 5px;
+        transition-duration: .5s;
+    }
+
+    .hamburger {
+        display: contents;
+        position: absolute;
+        top: calc(var(--header-height)/2);
+        right: 0;
+        transform: translateY(-50%);
+
+    }
+
+    div.hamburger {
+        display: flex;
+        flex-direction: column;
+
+        z-index: 2;
+    }
+
+    input.hamburger {
+        display: block;
+
+        z-index: 3;
+        height: 4rem;
+        width: 4rem;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    input[type="checkbox"]:checked~.nav-bar {
+        transform: translateX(100%);
+    }
+
+    input[type="checkbox"]:checked~.hamburger>.bar1 {
+        transform: translateY(1.05rem) rotate(45deg);
+    }
+
+    input[type="checkbox"]:checked~.hamburger>.bar2 {
+        display: none;
+    }
+
+    input[type="checkbox"]:checked~.hamburger>.bar3 {
+        transform: rotate(-45deg);
+    }
+
+    .nav-bar {
+        flex-grow: unset;
+
+        z-index: 1;
+        position: fixed;
+        left: -100%;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-color: var(--even-bgColor);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+
+        transition-duration: 0.5s;
+    }
+}
+
+
 
 section:nth-child(odd) {
     background-color: var(--odd-bgColor);
@@ -118,7 +197,7 @@ section h2 {
 }
 
 .home-self-intro {
-    font-size: clamp(1.5rem, 2.5vw, 4rem); 
+    font-size: clamp(1.5rem, 2.5vw, 4rem);
 }
 
 /* About me section */
@@ -178,7 +257,7 @@ ul {
 .next button {
     border: none;
     background-color: #0386f9;
-    color:black;
+    color: black;
     padding: 1rem;
     margin-bottom: 2rem;
     font-size: 1.5rem;
@@ -188,7 +267,7 @@ ul {
 
 .next button:hover {
     background-color: #004179;
-    color:white;
+    color: white;
 }
 
 /* Projects */
@@ -218,7 +297,7 @@ ul {
     width: 100%;
 }
 
-.pj-container > article {
+.pj-container>article {
     margin: 2rem .5rem;
 
 }
@@ -238,12 +317,12 @@ ul {
 .pj-details {
     padding: .5rem;
     transition: 1s ease;
-    background: rgba(0 , 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .pj-details a {
     display: inline-block;
-    
+
     padding: .5rem;
     background-color: #0386f9;
 }
@@ -252,7 +331,7 @@ ul {
     .pj-content {
         max-width: 10rem;
         height: 10rem;
-    
+
         background-size: cover;
         border-radius: 50%;
         transition: .5s ease;
@@ -261,11 +340,11 @@ ul {
         align-items: center;
     }
 
-    .pj-details >*:not(h3) {
+    .pj-details>*:not(h3) {
         display: none;
     }
 
-    .pj-content:hover{
+    .pj-content:hover {
         max-width: 20rem;
         height: 20rem;
         border-radius: .5rem;
@@ -273,19 +352,19 @@ ul {
     }
 
     .pj-content:hover .pj-details>*:not(h3) {
-        display:block;
+        display: block;
     }
 
     .pj-details a:hover {
-        background-color:#034176;
+        background-color: #034176;
     }
-    
+
 }
 
 /* Contact */
 
 .icon-wrapper {
-    display:inline-block;
+    display: inline-block;
     padding: .5rem;
     border-radius: 50%;
     background-color: white;
@@ -317,12 +396,12 @@ ul {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .contact-media ol li a:hover {
     transform: scale(1.05);
-    color:#0386f9;
+    color: var(--text-hover);
 }
 
 .contact-email {
@@ -330,11 +409,11 @@ ul {
 }
 
 .contact-email a {
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .contact-email a:hover {
-    color:#0386f9;
+    color: var(--text-hover);
 }
 
 @media (min-width: 40rem) {
@@ -342,11 +421,12 @@ ul {
         text-align: unset;
         margin-left: 5rem;
     }
+
     .abt-me-card {
         flex-basis: 40%;
     }
 
-    .pj-container{
+    .pj-container {
         flex-direction: row;
     }
 
