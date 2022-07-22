@@ -1,4 +1,3 @@
-
 // Part 1
 const alertBtn       = document.querySelector('#alert');
 const confirmBtn     = document.querySelector('#confirm');
@@ -22,16 +21,20 @@ confirmBtn.addEventListener('click', () => {
 });
 
 promptBtn.addEventListener('click', () => {
-    const result = prompt('Please, enter something: ');
+    let result = prompt('Please, enter something: ');
+    if (!result) result = "User didn't enter anything";
     printResult(`
         The value returned by the prompt method: ${result}
     `);
 });
 
 saferPromptBtn.addEventListener('click', () => {
-    const result = prompt('Please, enter something: ');
+    const dirty = prompt('Please, enter something: ');
+    let result = undefined;
+    if (!dirty) result = "User didn't enter anything";
+    else result = DOMPurify.sanitize(dirty);
     // purify result
     printResult(`
-        The value returned by the prompt method: ${result}
+        The value returned by the prompt method after purified: ${result}
     `);
 })
