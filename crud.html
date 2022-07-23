@@ -9,12 +9,39 @@
 </head>
 <body>
     <header>
-        <h1>Hello, wellcome to my blog</h1>
+        <h1>Hello, welcome to my blog</h1>
     </header>
     <main>
+        <h2>content List</h2>
         <ul id="content-list">
 
         </ul>
+        <hr>
+        <button id="add-new">add new item</button>
     </main>
+    <dialog id="dialog">
+        <h2>Add new Item</h2>
+        <form id="add-new-item-form">
+            <label for="title">Title</label>
+            <input type="text" id="title">
+            <label for="date">Date</label>
+            <input type="date" name="date" id="date">
+            <label for="summary">Summary</label>
+            <textarea name="summary" id="summary" cols="30" rows="5"></textarea>
+            <input type="submit" value="Submit">
+            <input type="submit" value="Cancel">
+            
+        </form>
+    </dialog>
+
+    <dialog id="remove-dialog">
+        <h2>Remove Item</h2>
+        <form id="remove-item">
+            Are you sure to remove this item?
+            <input type="submit" value="Confirm">
+            <input type="submit" value="Cancel">
+        </form>
+    </dialog>
+    
 </body>
 </html>
