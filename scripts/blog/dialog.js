@@ -12,7 +12,7 @@ function showDialog (item = null, index = 0) {
 }
 
 function emptyInput() {
-    document.querySelector('#add-new-item-form').dataset.index = '';
+    delete document.querySelector('#add-new-item-form').dataset.index;
     document.querySelector('#title').value = '';
     document.querySelector('#date').value = '';
     document.querySelector('#summary').value = '';
@@ -35,13 +35,13 @@ function bindDialogSubmit() {
         newEntry.title   = document.querySelector('#title').value;
         newEntry.date    = new Date(document.querySelector('#date').valueAsNumber).toDateString();
         newEntry.summary = document.querySelector('#summary').value;
+
         if (!form.dataset.index)
             createEntry(newEntry);
         else 
             updateEntry(newEntry, form.dataset.index);
  
         emptyInput();
-        form.dataset.index = undefined;
     })
 }
 
@@ -56,6 +56,7 @@ function bindRemoveDialog() {
             return;
         
         deleteEntry(event.target.dataset.index);
+        delete event.target.dataset.index;
     })
 }
 

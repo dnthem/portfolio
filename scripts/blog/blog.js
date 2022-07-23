@@ -32,8 +32,8 @@ function populateList() {
     const data = readAllEntry();
     const contentList = document.querySelector('#content-list');
     contentList.innerHTML = '';
-    data.forEach((item, index) => {
-        contentList.innerHTML += setItem(item, index);
+    data.forEach((item) => {
+        contentList.innerHTML += setItem(item, item.id);
     })
 }
 

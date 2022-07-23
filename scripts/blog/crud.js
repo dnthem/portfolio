@@ -24,7 +24,7 @@ function createEntry(item) {
     const contentList = document.querySelector('#content-list');
 
     data.push(item);
-    item.id = data.length-1;
+    item.id = new Date().getTime();
     contentList.innerHTML += setItem(item, item.id);
 
     localStorage.setItem(db, JSON.stringify(data));
