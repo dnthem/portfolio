@@ -1,5 +1,11 @@
 import {createEntry, updateEntry, deleteEntry} from "./crud.js";
 
+/**
+ * Displays Add-new-item dialog. If arguments are passed in, it populates the form.
+ * @param {Object} item is the entry object - default is null
+ * @param {Number} index is the id of the object - default is 0
+ * @returns nothing
+ */
 function showDialog (item = null, index = 0) {
     document.querySelector('#dialog').setAttribute('open', 'true');
 
@@ -18,7 +24,11 @@ function emptyInput() {
     document.querySelector('#summary').value = '';
 }
 
-function bindDialogSubmit() {
+/**
+ * Adds event listener when submitting add new item dialog.
+ * Either submit or cancel depends on the submit button value
+ */
+function bindSubmitDialog() {
     const form = document.querySelector('#add-new-item-form');
     const dialog = document.querySelector('#dialog');
     form.addEventListener('submit', (event) => {
@@ -45,6 +55,9 @@ function bindDialogSubmit() {
     })
 }
 
+/**
+ * Adds event listener for the remove Dialog.
+ */
 function bindRemoveDialog() {
     const form = document.querySelector('#remove-item');
     const dialog = document.querySelector('#remove-dialog');
@@ -60,13 +73,20 @@ function bindRemoveDialog() {
     })
 }
 
+/**
+ * Displays remove Dialog
+ * @param {Number} index is the id of the item needed to remove.
+ */
 function showRemoveDialog (index) {
     document.querySelector('#remove-dialog').setAttribute('open', 'true');
     document.querySelector('#remove-item').dataset.index = index;
 }
-    
+
+/**
+ * Dialog Module init
+ */
 function dialogInit () {
-    bindDialogSubmit();
+    bindSubmitDialog();
     bindRemoveDialog();
 }
 
