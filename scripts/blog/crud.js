@@ -21,7 +21,6 @@ function setItem (item, index) {
                 <button class="edit" data-index="${index}">edit</button>
                 <button class="delete" data-index="${index}">delete</buton>
             </div>
-        </li>
         `;
     return result;
 }
@@ -36,7 +35,7 @@ function createEntry(item) {
 
     data.push(item);
     item.id = new Date().getTime();
-    contentList.innerHTML += setItem(item, item.id);
+    contentList.appendChild(setItem(item, item.id));
 
     localStorage.setItem(db, JSON.stringify(data));
 }

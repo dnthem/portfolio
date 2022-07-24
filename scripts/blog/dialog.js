@@ -13,7 +13,7 @@ function showDialog (item = null, index = 0) {
 
     document.querySelector('#add-new-item-form').dataset.index = index;
     document.querySelector('#title').value = item.title;
-    document.querySelector('#date').value = new Date(item.date).toISOString().substring(0,10);
+    document.querySelector('#date').value = new Date(item.date).toISOString().substring(0,11);
     document.querySelector('#summary').value = item.summary;
 }
 
@@ -33,7 +33,7 @@ function bindSubmitDialog() {
     const dialog = document.querySelector('#dialog');
     form.addEventListener('submit', (event) => {
         event.preventDefault();
-        console.log(event.currentTarget[0], event.currentTarget[1], event.currentTarget[2]);
+        
 
         dialog.open = false; // close dialog
         

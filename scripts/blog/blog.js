@@ -68,7 +68,7 @@ function populateList() {
     
     contentList.innerHTML = '';
     data.forEach((item) => {
-        contentList.append(setItem(item, item.id));
+        contentList.appendChild(setItem(item, item.id));
     })
 }
 
@@ -86,6 +86,4 @@ function init() {
     DialogController.dialogInit();
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    init();
-})
+window.addEventListener('DOMContentLoaded', init);
