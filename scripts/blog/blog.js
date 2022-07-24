@@ -35,7 +35,7 @@ function bindEditDeleteEvents() {
         
         if (target.matches('.edit')) {
             const item = readItemWidthId(target.dataset.index);
-            DialogController.showDialog(item, target.dataset.index);
+            DialogController.showDialog(item, item.id);
         }
             
         else if (target.matches('.delete'))
@@ -68,7 +68,7 @@ function populateList() {
     
     contentList.innerHTML = '';
     data.forEach((item) => {
-        contentList.innerHTML += setItem(item, item.id);
+        contentList.append(setItem(item, item.id));
     })
 }
 

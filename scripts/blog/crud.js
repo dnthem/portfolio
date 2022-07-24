@@ -8,8 +8,9 @@ const db = 'DATA';
  * @returns < li > element
  */
 function setItem (item, index) {
-    const result = `
-        <li data-index="${index}">
+    const result = document.createElement('li');
+    result.dataset.index = index;
+    result.innerHTML = `
             <h3> ${item.title}  </h3>
             <p>
                 <em>${item.date}</em>
@@ -55,30 +56,22 @@ function readAllEntry() {
  */
 function readItemWidthId (id) {
     const data =  readAllEntry();
-    return data.find(item => item.id = id);
+    return data.find(item => item.id == id);
 }
 
 /**
  * Update a specific entry
- * @param {Object} item is the entry item
+ * @param {Object} item is the new edited item
  * @param {Number} index is the entry id
  */
 function updateEntry (item, index) {
     const data = JSON.parse(localStorage.getItem(db));
     const itemIdx = data.findIndex(item => item.id == index);
+    item.id = index;
     data[itemIdx] = item;
-    document.querySelector(`li[data-index="${index}"]`).innerHTML = `
-            <h3> ${item.title}  </h3>
-            <p>
-                <em>${item.date}</em>
-                <br>
-                Summary: ${item.summary}
-            </p>
-            <div class="buttons">
-                <button class="edit" data-index="${index}">edit</button>
-                <button class="delete" data-index="${index}">delete</buton>
-            </div>
-    `;
+    const oldLI = document.querySelector(`li[data-index="${index}"]`);
+    oldLI.parentNode.replaceChild(setItem(item, item.id), oldLI);
+
     // update localStorage
     localStorage.setItem(db, JSON.stringify(data));
 }

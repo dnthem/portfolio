@@ -7,7 +7,7 @@ import {createEntry, updateEntry, deleteEntry} from "./crud.js";
  * @returns nothing
  */
 function showDialog (item = null, index = 0) {
-    document.querySelector('#dialog').setAttribute('open', 'true');
+    document.querySelector('#dialog').open = true;
 
     if (!item) return; 
 
@@ -33,7 +33,9 @@ function bindSubmitDialog() {
     const dialog = document.querySelector('#dialog');
     form.addEventListener('submit', (event) => {
         event.preventDefault();
-        dialog.removeAttribute('open'); // close dialog
+        console.log(event.currentTarget[0], event.currentTarget[1], event.currentTarget[2]);
+
+        dialog.open = false; // close dialog
         
         if (event.submitter.value === 'Cancel')
         {
