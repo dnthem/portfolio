@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud</title>
+    <link rel="stylesheet" href="./css/styledcrud.css">
+    <script type="module" src="./scripts/blog/blog.js"></script>
+
+    <!-- Fira Sans - Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="wrapper">
+            <h1>Hello</h1>
+            <p>Welcome To My Blog</p>
+        </div>
+
+    </header>
+    <p class="source">source: <a href="https://www.pexels.com/@eberhardgross/">@eberhardgross</a></p>
+    <main>
+        <ul id="content-list">
+        </ul>
+        <button id="add-new">
+            <img src="./img/icons/append-icon.svg" alt="append-icon" class="icon add-new-item-icon">
+            <span></span>
+        </button>
+    </main>
+    <footer>
+
+    </footer>
+    <div class="blur hidden"></div>
+    <dialog id="dialog">
+        <h2><span>Add New Item</span></h2>
+        <form id="add-new-item-form">
+            <label for="title">Title</label>
+            <input type="text" id="title">
+            <label for="date">Date</label>
+            <input type="date" name="date" id="date">
+            <label for="summary">Summary</label>
+            <textarea name="summary" id="summary" cols="30" rows="5"></textarea>
+            <div class="form-btns">
+                <input type="submit" value="Submit">
+                <input type="submit" value="Cancel">
+            </div>
+            
+        </form>
+    </dialog>
+
+    <dialog id="remove-dialog">
+        <h2>Remove Item</h2>
+        <form id="remove-item">
+            Are you sure to remove this item?
+            <div class="form-btns">
+                <input type="submit" value="Confirm">
+                <input type="submit" value="Cancel">
+            </div>
+            
+        </form>
+    </dialog>
+
+</body>
+
+</html>

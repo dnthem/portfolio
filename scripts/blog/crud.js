@@ -18,8 +18,8 @@ function setItem (item, index) {
                 Summary: ${item.summary}
             </p>
             <div class="buttons">
-                <button class="edit" data-index="${index}">edit</button>
-                <button class="delete" data-index="${index}">delete</buton>
+            <button class="edit" data-index="${index}"><img class="icon" src="./img/icons/pencil-icon.svg"></button>
+            <button class="delete" data-index="${index}"><img class="icon" src="./img/icons/trash-icon.svg"></button>
             </div>
         `;
     return result;

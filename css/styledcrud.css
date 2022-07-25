@@ -1,0 +1,220 @@
+:root {
+    --confirm-btn: #0088ff;
+    --confirm-hv-btn: #004e92;
+    --text: #1a1717;
+    --text-impt-1: #4a4a4a;
+    --text-impt-2: #b8b8b8;
+    --icon-size: 1rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Fira Sans', sans-serif;
+    color: var(--text);
+}
+
+/* Header section */
+
+header{
+    background-image: url('../img/bg/bg-img.jpg');
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 25vh;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.wrapper {
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.wrapper > * {
+    color: #ffffff;
+}
+
+/* Main */
+
+main {
+    width: 90vw;
+    margin: 0 auto;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    
+    padding: 1rem 0;
+    border-bottom: 1px solid #b8b8b8;
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+}
+
+li h3 {
+    font-weight:bold;
+    font-size: 2rem;
+}
+
+em {
+    color: var(--text-impt-2);
+}
+
+li p {
+    font-size: 1.5rem;
+    color: var(--text-impt-1);
+    width: calc(100% - (var(--icon-size)*2));
+}
+
+.edit, .delete {
+    border: none;
+    background: transparent;
+    display: inline-block;
+    z-index: 1;
+}
+
+
+
+.icon {
+    z-index: 0;
+    cursor: pointer;
+    width: var(--icon-size);
+}
+
+.icon:hover, .icon:active {
+    transform: scale(1.1)
+}
+
+.buttons {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Add button */
+#add-new {
+    --item-width: 4rem;
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    border: none;
+    background: transparent;
+}
+
+.add-new-item-icon {
+    width:var(--item-width);
+    position: relative;
+}
+
+.add-new-item-icon:hover ~ span::after {
+    content: 'Add new entry';
+    position: absolute;
+    font-size: 1.3rem;
+    font-weight: bold;
+    right: var(--item-width);
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 1s ease;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 12ch }
+}
+
+/* Dialog */
+.blur {
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+dialog {
+    position: fixed;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    border: none;
+    box-shadow: 0px 0px 2px 5px rgba(0, 0, 0, .2);
+    min-width: min(1000px, 95vw);
+}
+
+dialog > h2 {
+    border-bottom: 1px solid var(--text-impt-2);
+    text-align: center;
+    font-weight: bolder;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+
+form label {
+    margin: 1rem 0;
+}
+
+form > label::after {
+    content: '*';
+    color: red;
+    margin-left: .5rem;
+}
+
+form > input {
+    padding: 1rem;
+}
+
+.form-btns {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.form-btns > * {
+    border: none;
+    padding: 1rem;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.form-btns > *:first-child {
+    background-color: var(--confirm-btn);
+    margin-right: 1rem;
+    color: white;
+}
+
+.form-btns > *:first-child:hover {
+    background-color: var(--confirm-hv-btn);
+}
+
+.form-btns > *:last-child:hover {
+    background-color:#4a4a4a;
+}
+
+#remove-dialog {
+    width: 20rem;
+}
+
+.hidden {
+    display: none;
+}
