@@ -8,19 +8,19 @@ const data = [
     {
         id: 1,
         title: "Something",
-        date: new Date("07/22/2022").toDateString(),
+        date: "2022-03-22",
         summary: "Today is beatiful",
     },
     {
         id: 2,
         title: "marvel movies",
-        date: new Date("07/23/2022").toDateString(),
+        date: "2022-05-22",
         summary: "Why it is so stupid",
     },
     {
         id: 3,
         title: "How to be successful",
-        date: new Date("07/24/2022").toDateString(),
+        date: "2022-06-15",
         summary: "Don't know, just do it",
     },
 ];

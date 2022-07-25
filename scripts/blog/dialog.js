@@ -13,7 +13,7 @@ function showDialog (item = null, index = 0) {
 
     document.querySelector('#add-new-item-form').dataset.index = index;
     document.querySelector('#title').value = item.title;
-    document.querySelector('#date').value = new Date(item.date).toISOString().substring(0,11);
+    document.querySelector('#date').value = item.date;
     document.querySelector('#summary').value = item.summary;
 }
 
@@ -34,7 +34,6 @@ function bindSubmitDialog() {
     form.addEventListener('submit', (event) => {
         event.preventDefault();
         
-
         dialog.open = false; // close dialog
         
         if (event.submitter.value === 'Cancel')
@@ -44,9 +43,9 @@ function bindSubmitDialog() {
         }
 
         const newEntry = {};
-        newEntry.title   = document.querySelector('#title').value;
-        newEntry.date    = new Date(document.querySelector('#date').valueAsNumber).toDateString();
-        newEntry.summary = document.querySelector('#summary').value;
+        newEntry.title   = event.currentTarget[0].value;
+        newEntry.date    = event.currentTarget[1].value;
+        newEntry.summary = event.currentTarget[2].value;
 
         if (!form.dataset.index)
             createEntry(newEntry);

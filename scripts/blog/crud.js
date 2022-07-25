@@ -11,7 +11,7 @@ function setItem (item, index) {
     const result = document.createElement('li');
     result.dataset.index = index;
     result.innerHTML = `
-            <h3> ${item.title}  </h3>
+            <a href=""><h3>${item.title}</h3></a>
             <p>
                 <em>${item.date}</em>
                 <br>
