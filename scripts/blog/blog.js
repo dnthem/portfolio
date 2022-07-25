@@ -1,6 +1,6 @@
 import {db, setItem, readAllEntry, readItemWidthId } from "./crud.js";
 import * as DialogController from "./dialog.js";
-
+import * as StyledDialog from "./styledDialog.js";
 /**
  * Sameple data
  */
@@ -84,6 +84,7 @@ function init() {
     bindEditDeleteEvents();
     bindAddNewItem();
     DialogController.dialogInit();
+    StyledDialog.init();
 }
 
 window.addEventListener('DOMContentLoaded', init);

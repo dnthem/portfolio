@@ -5,6 +5,7 @@
     --text-impt-1: #4a4a4a;
     --text-impt-2: #b8b8b8;
     --icon-size: 1rem;
+    --main-width: min(80vw, 1200px);
 }
 
 * {
@@ -41,8 +42,10 @@ header{
 /* Main */
 
 main {
-    width: 90vw;
+    max-width: var(--main-width);
+    min-height: 70vh;
     margin: 0 auto;
+    position: relative;
 }
 
 ul {
@@ -91,7 +94,7 @@ li p {
 }
 
 .icon:hover, .icon:active {
-    transform: scale(1.1)
+    transform: scale(1.1);
 }
 
 .buttons {
@@ -180,7 +183,7 @@ form > label::after {
     margin-left: .5rem;
 }
 
-form > input {
+form > input, textarea {
     padding: 1rem;
 }
 
@@ -213,8 +216,4 @@ form > input {
 
 #remove-dialog {
     width: 20rem;
-}
-
-.hidden {
-    display: none;
 }
