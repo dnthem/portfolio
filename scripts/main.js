@@ -1,3 +1,6 @@
+/**
+ * hides my photo on home section ans shows it on other sections
+ */
 function checkPhoto () {
     const myPhoto = document.querySelector('.small-photo');
     const mediumPhoto = document.querySelector('.home-container');
@@ -7,11 +10,16 @@ function checkPhoto () {
         myPhoto.classList.add('hidden');
 }
 
+/**
+ * Bind event for my photo
+ */
 function bindCheckMyPhoto () {
     document.addEventListener('scroll', checkPhoto);
 }
 
-
+/**
+ * Adds events for buttons to scroll to the next sections
+ */
 function bindButtons () {
     const checkPJ = document.querySelector('#checkOutPJBtn');
     const contactBtn = document.querySelector('#contectBtn');
@@ -25,6 +33,9 @@ function bindButtons () {
     })
 }
 
+/**
+ * Navigation bar link highlighted when the section is visible on screen
+ */
 function setNavBar () {
     const sections = document.querySelectorAll('section');
     sections.forEach(section => {
@@ -42,6 +53,9 @@ function setNavBar () {
     })
 }
 
+/**
+ * Closes navigtion bar on mobile
+ */
 function bindToggleNavBar () {
     const navBar = document.querySelector('.nav-bar');
     const checkBox = document.querySelector('input[type="checkbox"]');
