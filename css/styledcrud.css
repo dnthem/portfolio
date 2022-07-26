@@ -11,7 +11,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Signika', sans-serif;
     color: var(--text);
 }
 
@@ -160,7 +160,7 @@ dialog {
 dialog > h2 {
     border-bottom: 1px solid var(--text-impt-2);
     text-align: center;
-    font-weight: bolder;
+    font-weight: bold;
     height: 5rem;
     display: flex;
     justify-content: center;

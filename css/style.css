@@ -15,6 +15,10 @@
     /* outline: 1px solid black; */
 }
 
+.actived-section {
+    color: var(--text-hover);
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -440,4 +444,8 @@ ul {
     .contact-container {
         flex-direction: row;
     }
+}
+
+.hidden {
+    visibility: hidden;
 }

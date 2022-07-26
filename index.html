@@ -7,17 +7,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome, I'm Them Dang</title>
     <link rel="stylesheet" href="./css/style.css">
-
+    <script src="./scripts/main.js" type="module"></script>
     <!-- Google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9W15S09NZC"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-9W15S09NZC');
+    </script>
 </head>
 
 <body>
     <header>
         <div class="header-photo">
-            <img class="my-photo small-photo" src="./img/themdang2.jpeg" alt="my photo">
+            <img class="my-photo small-photo hidden" src="./img/themdang2.jpeg" alt="my photo">
         </div>
         <input type="checkbox" class="hamburger">
         <div class="hamburger">
@@ -37,7 +47,7 @@
     </header>
     <main>
         <!-- Home page section -->
-        <section>
+        <section id="home">
             <h2>Welcome</h2>
             <div class="home-container">
                 <picture>
@@ -95,7 +105,7 @@
 
             </div>
             <div class="next">
-                <button>Check out my Projects</button>
+                <button id="checkOutPJBtn">Check out my Projects</button>
             </div>
         </section>
 
@@ -156,7 +166,7 @@
             </div>
 
             <div class="next">
-                <button>Contact Information</button>
+                <button id="contectBtn">Contact Information</button>
             </div>
         </section>
 
