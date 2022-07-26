@@ -1,29 +1,7 @@
 import {db, setItem, readAllEntry, readItemWidthId } from "./crud.js";
 import * as DialogController from "./dialog.js";
 import * as StyledDialog from "./styledDialog.js";
-/**
- * Sameple data
- */
-const data = [
-    {
-        id: 1,
-        title: "Something",
-        date: "2022-03-22",
-        summary: "Today is beatiful",
-    },
-    {
-        id: 2,
-        title: "marvel movies",
-        date: "2022-05-22",
-        summary: "Why it is so stupid",
-    },
-    {
-        id: 3,
-        title: "How to be successful",
-        date: "2022-06-15",
-        summary: "Don't know, just do it",
-    },
-];
+import {data} from "./sample.js";
 
 /**
  * Adds event listeners for edit and delete buttons for every entry
