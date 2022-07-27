@@ -20,9 +20,12 @@ function bindEventBlur() {
             toggleBlurBg();
     });
 
+    
     addNew.addEventListener('click', toggleBlurBg);
-    allForm[0].addEventListener('submit', toggleBlurBg);
-    allForm[1].addEventListener('submit', toggleBlurBg);
+    allForm.forEach(form => {
+        form.addEventListener('reset', toggleBlurBg);
+    })
+    
 }
 
 /**

@@ -17,13 +17,6 @@ function showDialog (item = null, index = 0) {
     document.querySelector('#summary').value = item.summary;
 }
 
-function emptyInput() {
-    delete document.querySelector('#add-new-item-form').dataset.index;
-    document.querySelector('#title').value = '';
-    document.querySelector('#date').value = '';
-    document.querySelector('#summary').value = '';
-}
-
 /**
  * Adds event listener when submitting add new item dialog.
  * Either submit or cancel depends on the submit button value
@@ -31,16 +24,9 @@ function emptyInput() {
 function bindSubmitDialog() {
     const form = document.querySelector('#add-new-item-form');
     const dialog = document.querySelector('#dialog');
+
     form.addEventListener('submit', (event) => {
         event.preventDefault();
-        
-        dialog.open = false; // close dialog
-        
-        if (event.submitter.value === 'Cancel')
-        {
-            emptyInput();
-            return;
-        }
 
         const newEntry = {};
         newEntry.title   = event.currentTarget[0].value;
@@ -52,9 +38,12 @@ function bindSubmitDialog() {
         else 
             updateEntry(newEntry, form.dataset.index);
  
-        emptyInput();
-    })
+        form.reset();
+    });
+
+    form.addEventListener('reset', () => dialog.open = false);
 }
+
 
 /**
  * Adds event listener for the remove Dialog.
@@ -64,14 +53,11 @@ function bindRemoveDialog() {
     const dialog = document.querySelector('#remove-dialog');
     form.addEventListener('submit', (event) => {
         event.preventDefault();
-        dialog.removeAttribute('open');
-
-        if (event.submitter.value === 'Cancel')
-            return;
-        
         deleteEntry(event.target.dataset.index);
         delete event.target.dataset.index;
-    })
+        form.reset();
+    });
+    form.addEventListener('reset', () => dialog.open = false);
 }
 
 /**
