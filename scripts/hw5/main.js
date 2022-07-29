@@ -1,9 +1,10 @@
-import { fetchAPI } from "./fetchAPI.js";
+import { fetchAPI } from './fetchAPI.js';
+import { myXML } from './XML.js';
 
-const getBtn = document.querySelector("output");
+let Server = myXML;
 
 function output(message) {
-  const output = document.querySelector("output");
+  const output = document.querySelector('output');
   output.innerHTML = `<pre> ${JSON.stringify(message, null, 4)}</pre>`;
 }
 
@@ -14,34 +15,31 @@ function retrieveData(target) {
 async function post(event) {
   const target = event.currentTarget;
   const data = retrieveData(target);
-  const res = await fetchAPI.fetch("post", data);
-  output(res);
+  await Server.request('post', data, output);
 }
 
 async function get() {
-  const res = await fetchAPI.fetch("get");
-  output(res);
+  await Server.request('get', null, output);
 }
 
 async function put(event) {
   const target = event.currentTarget;
   const data = retrieveData(target);
-  const result = await fetchAPI.fetch("put", data);
-  output(result);
+  await Server.request('put', data, output);
 }
 
 async function myDelete(event) {
-  const result = await fetchAPI.fetch("delete");
-  output(result);
+  await Server.request('delete', null, output);
 }
+
 function formSubmit() {
-  document.querySelector("form").addEventListener("submit", async (event) => {
+  document.querySelector('form').addEventListener('submit', async (event) => {
     event.preventDefault();
     const target = event.submitter;
 
-    if (target.matches("#post")) post(event);
-    else if (target.matches("#get")) get();
-    else if (target.matches("#put")) put(event);
+    if (target.matches('#post')) post(event);
+    else if (target.matches('#get')) get();
+    else if (target.matches('#put')) put(event);
     else myDelete(event);
     event.target.reset();
     setDate();
@@ -49,7 +47,7 @@ function formSubmit() {
 }
 
 function setDate() {
-  document.querySelector("#date").value = new Date().toDateString();
+  document.querySelector('#date').value = new Date().toDateString();
 }
 
 function init() {
@@ -57,4 +55,4 @@ function init() {
   setDate();
 }
 
-window.addEventListener("DOMContentLoaded", init);
+window.addEventListener('DOMContentLoaded', init);

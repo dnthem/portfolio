@@ -2,3 +2,7 @@ fieldset {
     display: flex;
     flex-direction: column;
 }
+
+button {
+    display: inline-block;
+}

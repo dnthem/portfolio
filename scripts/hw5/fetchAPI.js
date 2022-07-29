@@ -1,6 +1,6 @@
 export const fetchAPI = {};
 
-fetchAPI.fetch = async (type, data = null) => {
+fetchAPI.request = async (type, data = null, callback) => {
     const option = {
         method : type
     }
@@ -16,7 +16,7 @@ fetchAPI.fetch = async (type, data = null) => {
       throw new Error("Something went wrong");
     })
     .then((responseJson) => {
-      return responseJson;
+      callback(responseJson);
     })
     .catch((error) => {
       console.log(error);
