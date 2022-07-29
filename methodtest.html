@@ -22,6 +22,10 @@
                 <textarea name="article_body" id="article_body" cols="30" rows="10"></textarea>
                 <label for="date">Date</label>
                 <input type="text" name="date" id="date" disabled>
+                <div class="option">
+                    <label for="XML"><input type="radio" name="requestType" value="XML" required>XML</label>
+                    <label for="FetchAPI"><input type="radio" name="requestType" value="FetchAPI" required>FetchAPI</label>
+                </div>
                 <div class="btn-group">
                     <button type="submit" id="post">postBtn</button>
                     <button type="submit" id="get">getBtn</button>
@@ -30,7 +34,7 @@
                 </div>
             </fieldset>
             <fieldset>
-                <legend>Response: </legend>
+                <legend id="response-legend">Response: </legend>
                 <output></output>
             </fieldset>
            
