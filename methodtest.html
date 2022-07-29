@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Method Test</title>
+    <link rel="stylesheet" href="./css/methodtest.css">
+    <script src="./scripts/hw5/main.js" type="module"></script>
+</head>
+<body>
+    <main>
+        <form>
+            
+            <fieldset>
+                <legend>Method Test</legend>
+                <label for="id">id</label>
+                <input type="text" name="id" id="id">
+                <label for="article_name">Article Name</label> 
+                <input type="text" name="article_name" id="article_name">
+                <label for="article_body">Article Body</label>
+                <textarea name="article_body" id="article_body" cols="30" rows="10"></textarea>
+                <label for="date">Date</label>
+                <input type="text" name="date" id="date" disabled>
+                <div class="btn-group">
+                    <button type="submit" id="post">postBtn</button>
+                    <button type="submit" id="get">getBtn</button>
+                    <button type="submit" id="put">putBtn</button>
+                    <button type="submit" id="delete">deleteBtn</button>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Response: </legend>
+                <output></output>
+            </fieldset>
+           
+        </form>
+    </main>
+</body>
+</html>
