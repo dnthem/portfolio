@@ -2,7 +2,6 @@ export const myXML = {};
 
 
 myXML.request = async (type, data = null, callback) => {
-    let result;
     const url = `https://httpbin.org/${type}`;
     const xhr = new XMLHttpRequest();
     xhr.open(type, url, true);
