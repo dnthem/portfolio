@@ -33,9 +33,7 @@ function output(message) {
  * @returns message body of a request
  */
 function retrieveData(target) {
-  return `id=${target[1].value.trim()}&article-title=${target[2].value.trim()}&article-body=${target[3].value.trim()}&date=${
-    target[4].value
-  }`;
+  return `id=${target[1].value.trim()}&articleTitle=${target[2].value.trim()}&articleBody=${target[3].value.trim()}&date=${target[4].value}`;
 }
 
 // POST
@@ -46,8 +44,10 @@ async function post(event) {
 }
 
 // GET
-async function get() {
-  await SERVER.request("get", null, output);
+async function get(event) {
+  const target = event.currentTarget;
+  const data = retrieveData(target);
+  await SERVER.request("get", data, output);
 }
 
 // PUT
@@ -91,7 +91,7 @@ function formSubmit() {
     setServerConnectionMethod(requestType === "FetchAPI");
 
     if (target.matches("#post")) post(event);
-    else if (target.matches("#get")) get();
+    else if (target.matches("#get")) get(event);
     else if (target.matches("#put")) put(event);
     else myDelete(event);
 

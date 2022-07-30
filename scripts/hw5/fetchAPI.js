@@ -1,14 +1,24 @@
 export const fetchAPI = {};
 
 fetchAPI.request = async (type, data = null, callback) => {
+    let url = `https://httpbin.org/${type}`;
+    
+    console.log(data);
     const option = {
         method : type
     }
-    if (data != null) option.body = data;
-    option.headers = (type === 'post')?
-    {"Content-Type": "application/x-www-form-urlencoded"}:{ "accept" : "application/json"} ;
+    if (data != null && type != 'get') option.body = data;
+
+    if (type === 'get') 
+    { 
+      url += `?${data}`;
+      option.headers = {"Accept": "text/html"}
+    }
+    else if (type === 'post')
+      option.headers = {"Content-Type": "application/x-www-form-urlencoded"}
+    
      
-  return fetch(`https://httpbin.org/${type}`, option)
+  return fetch(url, option)
     .then((response) => {
       if (response.ok) {
         return response.json();
