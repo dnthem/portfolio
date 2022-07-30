@@ -59,7 +59,8 @@ async function put(event) {
 
 // DELETE
 async function myDelete(event) {
-  await SERVER.request("delete", null, output);
+  // assuming delete only needs id
+  await SERVER.request("delete", event.currentTarget[1].value, output);
 }
 
 /**

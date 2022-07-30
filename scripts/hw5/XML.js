@@ -14,11 +14,12 @@ function setUp (type, url, data) {
         result.headerVal = 'application/x-www-form-urlencoded';
         result.data = data;
     }
-    else {
+    else  {
         result.header = 'Accept';
         result.headerVal = 'application/json';
         result.data = data;
     }
+    
     return result;
 }
 
